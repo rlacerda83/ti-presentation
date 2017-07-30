@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mobly - Aprensetanção TI Desenvolvimento</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script>
+		function calculateAge() {
+			let currentYear = new Date().getFullYear();
+			let userBirthdayear = $('#year').val();
+			
+			$('#userAge').val(currentYear - userBirthdayear);
+			if (!userBirthdayear) {
+				$('#userAge').focus();
+				return false;
+			}
+			
+			$('#myModal').modal();	
+		}
+		
+		function loadAudio() {
+			var msg = new SpeechSynthesisUtterance('Você tem anos... Todos sabemos disso né? kkk... Agora é sério, Você tem ' + $('#userAge').val() + ' anos');
+			window.speechSynthesis.speak(msg);
+		}
+		
+	</script
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">TI Desenvolvimento</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">Explicação</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Tente Você Mesmo</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container" id="maincontent" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <div class="intro-text">
+                        <h1 class="name">Mundo da Programação</h1>
+                        <hr class="star-light">
+                        <span class="skills">Cálculo de Idade - Exemplo Prático</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Como Funciona</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+			
+			<div class="row">
+				<div class="col-lg-12">			
+					<p><b>Nossa Necessidade:</b> Calcular a idade de uma pessoa baseada no seu ano de nascimento.</p>
+					<p>Abaixo descrevemos essa pequena aplicação com um pseudo código e com o código nativo, no caso javascript. </p>
+				</div>
+			</div>
+			<br>
+			
+            <div class="row">
+                <div class="col-lg-6">
+					<h5>Pseudo Código</h5>
+                    <p><code>
+						
+						Ano Atual = 2017 <br>
+						Ano de Nascimento Informado = Informado pelo usuário <br>
+						Se o usuário não informar o ano de nascimento:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;Cálculo cancelado<br>
+						Fim da Condição Se<br><br>
+						Idade = Ano Atual - Ano de Nascimento Informado	<br>
+						Mostra Resultado
+						</code>
+					</p>
+                </div>
+                <div class="col-lg-6">
+					<h5>Código Nativo</h5>
+                    <p><code>
+						function calculateAge() {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;let currentYear = new Date().getFullYear();<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;let userBirthdayear = $('#year').val();<br>
+														
+							&nbsp;&nbsp;&nbsp;&nbsp;if (!userBirthdayear) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#userAge').focus();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;$('#userAge').val(currentYear - userBirthdayear);<br>
+							
+							&nbsp;&nbsp;&nbsp;&nbsp;$('#myModal').modal();	<br>
+						}
+					</code>
+				</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Tente Você Mesmo</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="year">Ano de Nascimento</label>
+								<input type="hidden" id="userAge" />
+                                <input type="number" class="form-control" placeholder="Informe o seu ano de nascimento" id="year" required data-validation-required-message="Informe o seu ano de nascimento">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" onclick="calculateAge()" class="btn btn-success btn-lg">Calcular</button>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Your Website 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+	
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">	
+				<div class="modal-body">
+					<h2 style="text-align:center">Idade Calculada</h2>
+					<hr class="star-primary">
+					<img src="img/terceira-idade.jpg" class="img-responsive img-centered" alt="">
+					<p><a href="javascript:;" onclick="loadAudio()">Clique aqui</a> para ouvir o resultado.</p>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+</body>
+
+</html>

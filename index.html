@@ -45,6 +45,7 @@
 		
 		function loadAudio() {
 			var msg = new SpeechSynthesisUtterance('Você tem anos... Todos sabemos disso né? kkk... Agora é sério, Você tem ' + $('#userAge').val() + ' anos');
+			msg.lang = 'pt-BR';
 			window.speechSynthesis.speak(msg);
 		}
 		
